@@ -1,6 +1,7 @@
 # CourseSelect [![Build Status](https://travis-ci.org/PENGZhaoqing/CourseSelect.svg?branch=master)](https://travis-ci.org/PENGZhaoqing/CourseSelect)
 
 本项目已部署在Cloud9平台上[演示Demo戳这里](http://courseselect2-magezhang.c9users.io)，点击前请联系我们打开服务器
+
 本项目依托于[高级软件工程课程项目](https://github.com/PENGZhaoqing/CourseSelect)进行开发
 
 ### 主界面
@@ -85,6 +86,7 @@ $ rails s
 
 在浏览器中输入`localhost:3000`访问主页
 
+
 ## 使用
 
 1.学生登陆：
@@ -107,3 +109,29 @@ $ rails s
 密码：`password`
 
 账号中数字都可以替换成2,3...等等
+
+
+## 测试
+
+本项目包含了部分的测试（integration/fixture/model test），测试文件位于/test目录下。运行测试：
+
+```
+$ rake test
+Run options: --seed 15794
+
+# Running:
+.........
+
+Finished in 1.202169s, 7.4865 runs/s, 16.6366 assertions/s.
+
+9 runs, 20 assertions, 0 failures, 0 errors, 0 skips
+```
+
+
+## How to Contribute
+
+先fork此项目，在分支修改后，pull request到主分支
+
+提问请到issues里创建，欢迎contributor！
+
+如果觉得好，给项目点颗星吧～
