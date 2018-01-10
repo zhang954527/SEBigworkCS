@@ -28,8 +28,8 @@ class CommentsController < ApplicationController
   def list
     @course=Course.find_by_id(params[:course_id])
     @comments=@course.comments
-    @comments_score = Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    @comments_count = Array[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    @comments_score = Array[0,0,0,0,0]
+    @comments_count = Array[0,0,0,0,0]
     @comments.each do |comment|
       if !(comment.item_one.nil?) then
         @comments_count[0]+=1
@@ -51,54 +51,7 @@ class CommentsController < ApplicationController
         @comments_count[4]+=1
         @comments_score[4] += comment.item_five
       end
-      if !(comment.item_six.nil?) then
-        @comments_count[5]+=1
-        @comments_score[5] += comment.item_six
-      end
-      if !(comment.item_seven.nil?) then
-        @comments_count[6]+=1
-        @comments_score[6] += comment.item_seven
-      end
-      if !(comment.item_eight.nil?) then
-        @comments_count[7]+=1
-        @comments_score[7] += comment.item_eight
-      end
-      if !(comment.item_nine.nil?) then
-        @comments_count[8]+=1
-        @comments_score[8] += comment.item_nine
-      end
-      if !(comment.item_ten.nil?) then
-        @comments_count[9]+=1
-        @comments_score[9] += comment.item_ten
-      end
-      if !(comment.item_eleven.nil?) then
-        @comments_count[10]+=1
-        @comments_score[10] += comment.item_eleven
-      end
-      if !(comment.item_twelve.nil?) then
-        @comments_count[11]+=1
-        @comments_score[11] += comment.item_twelve
-      end
-      if !(comment.item_thirteen.nil?) then
-        @comments_count[12]+=1
-        @comments_score[12] += comment.item_thirteen
-      end
-      if !(comment.item_fourteen.nil?) then
-        @comments_count[13]+=1
-        @comments_score[13] += comment.item_fourteen
-      end
-      if !(comment.item_fifteen.nil?) then
-        @comments_count[14]+=1
-        @comments_score[14] += comment.item_fifteen
-      end
-      if !(comment.item_sixteen.nil?) then
-        @comments_count[15]+=1
-        @comments_score[15] += comment.item_sixteen
-      end
-      if !(comment.item_seventeen.nil?) then
-        @comments_count[16]+=1
-        @comments_score[16] += comment.item_seventeen
-      end
+
     end
       @i = 0
       @i_count = 0

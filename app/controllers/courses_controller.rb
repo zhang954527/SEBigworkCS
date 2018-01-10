@@ -221,18 +221,7 @@ class CoursesController < ApplicationController
   def show
     @course=Course.find_by_id(params[:id])
   end
-  def show_more_1
-    @course=Course.find_by_id(params[:id])
-  end
-  def show_more_2
-    @course=Course.find_by_id(params[:id])
-  end
-  def show_more_3
-    @course=Course.find_by_id(params[:id])
-  end
-  def show_more_4
-    @course=Course.find_by_id(params[:id])
-  end
+
 
   def apply
     @course=Course.find_by_id(params[:id])
