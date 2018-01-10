@@ -12,9 +12,9 @@ michael:
   password_digest: <%= User.digest('password') %>
 
 rongtongjin:
-  name: 金融通
+  name: 阿布
   email: rongtongjin@gmail.com
-  num: 201628015007
+  num: 201728013011
   major: 计算机软件与理论
   department: 软件研究所
   password_digest: <%= User.digest('password') %>
