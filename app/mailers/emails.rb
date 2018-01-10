@@ -10,4 +10,13 @@ class Emails < ApplicationMailer
     mail(to: @recipient_email,title:"课程网站提醒", subject:@subject)
   end
 
+  def send_mail(params = {})
+    @url  = 'http://example.com/login'
+    mail( :subject => 'abcAAAAAAAASDFADSFADSFADSFDASFASDF',
+          :to => "1226982115@qq.com",
+          :from => 'm18801228937@163.com',
+          :date => Time.now
+    )
+  end
+
 end

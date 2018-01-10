@@ -19,7 +19,7 @@ class GradesController < ApplicationController
     elsif student_logged_in?
       @grades=current_user.grades
     else
-      redirect_to root_path, flash: {:warning=>"请先登陆"}
+      redirect_to root_path, flash: {:warning=>"请先登录"}
     end
   end
 
@@ -47,7 +47,7 @@ class GradesController < ApplicationController
       @course=Course.find_by_id(params[:course_id])
       @grades=@course.grades
     else
-      redirect_to root_path, flash: {:warning=>"请先登陆"}
+      redirect_to root_path, flash: {:warning=>"请先登录"}
     end
 
     respond_to do |format|
@@ -73,7 +73,7 @@ class GradesController < ApplicationController
   # Confirms a teacher logged-in user.
   def teacher_logged_in
     unless teacher_logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 

@@ -32,10 +32,15 @@
             <thead>
 
             <tr>
-              <th>学号</th>
-              <th>名字</th>
-              <th>专业</th>
-              <th>培养单位</th>
+              <th>课程编号</th>
+
+              <th>学期</th>
+              <% if teacher_logged_in? %>
+              <th>学生</th>
+              <% end %>
+              <% if student_logged_in? %>
+                  <th>教师</th>
+              <% end %>
               <th>课程</th>
               <th>分数</th>
 
@@ -45,10 +50,15 @@
 
             <% @grades.each do |grade| %>
                 <tr>
-                  <td><%= grade.user.num %></td>
-                  <td><%= grade.user.name %></td>
-                  <td><%= grade.user.major %></td>
-                  <td><%= grade.user.department %></td>
+                  <td><%= grade.course.course_code %></td>
+
+                  <td><%= grade.course.semester.info %></td>
+                  <% if student_logged_in? %>
+                  <td><%= grade.course.teacher.name %></td>
+                  <% end %>
+                  <% if teacher_logged_in? %>
+                      <td><%= grade.user.name %></td>
+                  <% end %>
                   <td><%= grade.course.name %></td>
                   <td><%= grade.grade %></td>
 

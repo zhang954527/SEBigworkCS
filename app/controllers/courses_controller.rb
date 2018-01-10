@@ -6,6 +6,9 @@ class CoursesController < ApplicationController
 
   #-------------------------for teachers----------------------
 
+
+
+
   def new
     @course=Course.new
   end
@@ -106,6 +109,36 @@ class CoursesController < ApplicationController
     @course = current_user.teaching_courses.where(semester: params[:id])
   end
   #-------------------------for students----------------------
+
+  def export
+    if student_logged_in?
+      @courses=current_user.courses
+    else
+      redirect_to root_path, flash: {:warning=>"请先登录"}
+    end
+
+    respond_to do |format|
+      format.html
+      format.xls {
+        require 'spreadsheet'
+        book = Spreadsheet::Workbook.new
+        sheet1 = book.create_worksheet
+        sheet1.row(0).concat %w{课程编号 课程名称 课时/学分 考试方式 主讲教师}
+        @courses.each_with_index do |course,i|
+
+          @user=User.find_by_id(course.teacher_id)
+
+          sheet1.row(i+1).push course.course_code, course.name, course.credit, course.exam_type, @user.name
+        end
+        book.write 'kcb.xls'
+        send_file 'kcb.xls',:type => "application/vnd.ms-excel", :filename => "已选课程.xls", :stream => false
+        return
+      }
+    end
+  end
+
+
+
   def list
     @course=Course.all
     @q = Course.ransack(params[:q])
@@ -228,21 +261,21 @@ class CoursesController < ApplicationController
   # Confirms a student logged-in user.
   def student_logged_in
     unless student_logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 
   # Confirms a teacher logged-in user.
   def teacher_logged_in
     unless teacher_logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 
   # Confirms a  logged-in user.
   def logged_in
     unless logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 

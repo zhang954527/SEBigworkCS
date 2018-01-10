@@ -14,6 +14,9 @@
         </div>
 
         <div class="panel-body">
+          <% if student_logged_in? %>
+          <%= link_to "导出", courses_export_url( :format => 'xls'), :class => "btn btn-success btn-xs" %>
+          <% end %>
           <table class="table table-responsive table-condensed table-hover">
             <thead>
             <tr>

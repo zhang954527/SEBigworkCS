@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'notices/detail'
   get 'grades/export' =>"grades#export"
   post 'grades/import' =>"grades#import"
+
+  get 'courses/export' => "courses#export"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,8 +21,8 @@ Rails.application.routes.draw do
   #   resources :products
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #root 'homes#index'
-  root 'sessions#new'
+  root 'homes#index'
+  #root 'sessions#new'
 
   resources :courses do
     member do

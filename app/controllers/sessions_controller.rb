@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       flash= {:info => "欢迎回来: #{user.name} :)"}
     else
       flash= {:danger => '账号或密码错误'}
+      redirect_to sessions_login_path
     end
     if student_logged_in?
       redirect_to courses_url, :flash => flash

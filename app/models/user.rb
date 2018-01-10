@@ -56,4 +56,15 @@ class User < ActiveRecord::Base
     self.email = email.downcase
   end
 
+  def pro_regist
+    @user = User.new(params[:user])
+    #@user.active_code = rand(Time.now.to_i).to_s
+    @user.isactivated = 0
+    if @user.save then
+      flash[:notice] = '您已经注册成功'
+      ActivateMail.deliver_sent(@user)
+      redirect_to :action => 'success'
+    end
+  end
+
 end

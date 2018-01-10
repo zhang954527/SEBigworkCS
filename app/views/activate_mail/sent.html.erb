@@ -1,0 +1,4 @@
+<h4><%= @user.name%>,您好！</h4>
+请在浏览器的地址栏中输入如下地址来激活您的账户：<br/>
+<a href='http://localhost:3000/regist/pro_activate?name=<%= @user.name%>&active_code=<%= @user.active_code%>'>
+  http://localhost:3000/regist/pro_activate?name=<%= @user.name%>&active_code=<%= @user.active_code%></a>

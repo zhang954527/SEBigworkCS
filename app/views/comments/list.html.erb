@@ -15,8 +15,7 @@
             <tr>
               <th>评估内容</th>
               <th>评分(平均值/人次)</th>
-              <th>评估内容</th>
-              <th>评分(平均值/人次)</th>
+
             </tr>
             </thead>
 
@@ -26,6 +25,12 @@
               <td>
                 <%= @comments_score[0]%> / <%= @comments_count[0]%>
               </td>
+              <!--<th>备课充分，讲课认真</th>
+              <td>
+                <%= @comments_score[1] %> / <%= @comments_count[1]%>
+              </td>-->
+            </tr>
+            <tr>
               <th>备课充分，讲课认真</th>
               <td>
                 <%= @comments_score[1] %> / <%= @comments_count[1]%>
@@ -36,6 +41,9 @@
               <td>
                 <%= @comments_score[2] %> / <%= @comments_count[2]%>
               </td>
+
+            </tr>
+            <tr>
               <th>虚心听取意见，积极改进教学</th>
               <td>
                 <%= @comments_score[3] %> / <%= @comments_count[3]%>
@@ -46,12 +54,12 @@
               <td>
                 <%= @comments_score[4] %> / <%= @comments_count[4]%>
               </td>
-              <th>教学内容基本符合教学大纲要求</th>
+             <!-- <th>教学内容基本符合教学大纲要求</th>
               <td>
                 <%= @comments_score[5] %> / <%= @comments_count[5]%>
-              </td>
+              </td>-->
             </tr>
-            <tr>
+            <!--<tr>
               <th>讲授思路清晰，概念清楚</th>
               <td>
                 <%= @comments_score[6] %> / <%= @comments_count[6]%>
@@ -100,12 +108,12 @@
               <td>
                 <%= @comments_score[15] %> / <%= @comments_count[15]%>
               </td>
-            </tr>
+            </tr>-->
             <tr>
-              <th>达到教学目的和要求</th>
+             <!-- <th>达到教学目的和要求</th>
               <td>
                 <%= @comments_score[16] %> / <%= @comments_count[16]%>
-              </td>
+              </td>-->
               <th>课程综合得分为：</th>
               <td>
                 <%= @comments_score_sum %>

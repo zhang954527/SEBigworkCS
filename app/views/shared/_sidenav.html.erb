@@ -6,12 +6,12 @@
 
         <% if teacher_logged_in? %>
             <a data-toggle="collapse" data-parent="#accordion" href="#CourseCollapse"><span class="glyphicon glyphicon-user"></span>
-              课程管理</a>
+              我的课程</a>
         <% end %>
 
         <% if student_logged_in? %>
             <a data-toggle="collapse" data-parent="#accordion" href="#CourseCollapse"><span class="glyphicon glyphicon-user"></span>
-              选修课程</a>
+              本学期课程</a>
         <% end %>
 
       </h4>
@@ -37,7 +37,7 @@
         <% if student_logged_in? %>
             <li class="list-group-item">
               <%= link_to list_courses_path do %>
-                  <span class="glyphicon glyphicon-chevron-right"></span> 选修课程
+                  <span class="glyphicon glyphicon-chevron-right"></span> 可选课程
                   <span class="label label-info pull-right"><%= (Course.where(:open => true)-current_user.courses).length %></span>
               <% end %>
             </li>
@@ -100,7 +100,7 @@
       </div>
     </div>
   </div>
-<!--  <div class="panel panel-default">
+<div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
 
@@ -130,9 +130,10 @@
       <% end %>
 
       <% if student_logged_in? %>
+
           <li class="list-group-item">
             <%= link_to comments_path do %>
-                <span class="glyphicon glyphicon-chevron-right"></span> 评估课程
+                <span class="glyphicon glyphicon-chevron-right"></span> 所有课程
                 <span class="label label-info pull-right"><%= current_user.courses.length %></span>
             <% end %>
           </li>
@@ -140,5 +141,5 @@
 
     </ul>
   </div>
-</div>-->
+</div>
 </div>

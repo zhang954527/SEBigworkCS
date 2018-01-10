@@ -13,7 +13,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
+  # Don't care if the mailers can't send.
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
@@ -38,17 +38,35 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.raise_delivery_errors = true
+
+
+
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.default :charset => 'utf-8'
+  # config.action_mailer.default_url_options = {host: 'wqscourseselect.herokuapp.com', port: 8000}
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     address:              'smtp.163.com',
+  #     port:                 25,
+  #     # domain:             '163.com',
+  #     user_name:           'chrisleeshu@163.com',
+  #     password:             'l603192802i',
+  #     authentication:       :plain,
+  #     enable_starttls_auto: true  }
+
+
+  ActionMailer::Base.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default :charset => 'utf-8'
-  config.action_mailer.default_url_options = {host: 'wqscourseselect.herokuapp.com', port: 8000}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      address:              'smtp.163.com',
-      port:                 25,
-      # domain:             '163.com',
-      user_name:           'chrisleeshu@163.com',
-      password:             'l603192802i',
-      authentication:       :plain,
-      enable_starttls_auto: true  }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = {
+      :address => "smtp.163.com",
+      :port => 25,
+      :domain => "163.com",
+      :authentication => :login,
+      :user_name => "m18801228937@163.com",
+      :password => "lk15273134928"
+  }
 end

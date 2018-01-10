@@ -19,7 +19,7 @@ RailsAdmin.config do |config|
   # == Authenticate ==
   config.authorize_with do
     if !current_user.admin
-      redirect_to main_app.root_url, flash: {:danger => '请先以管理员身份登陆'}
+      redirect_to main_app.root_url, flash: {:danger => '请先以管理员身份登录'}
     end
   end
 

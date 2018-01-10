@@ -103,7 +103,7 @@ class CommentsController < ApplicationController
       @i = 0
       @i_count = 0
       @comments_score_sum = 0
-      while @i < 17 do
+      while @i < 5 do
         if  @comments_count[@i] > 0then
           @i_count+=1
         @comments_score[@i] /=  @comments_count[@i]
@@ -127,21 +127,21 @@ class CommentsController < ApplicationController
   # Confirms a student logged-in user.
   def student_logged_in
     unless student_logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 
   # Confirms a teacher logged-in user.
   def teacher_logged_in
     unless teacher_logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 
   # Confirms a  logged-in user.
   def logged_in
     unless logged_in?
-      redirect_to root_url, flash: {danger: '请登陆'}
+      redirect_to root_url, flash: {danger: '请登录'}
     end
   end
 
