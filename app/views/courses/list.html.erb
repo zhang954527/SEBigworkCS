@@ -26,7 +26,9 @@
                         <%= form_tag list_courses_path, method: :get do %>
                         <tr>
                           <td>
-                            <%= text_field_tag "q[name_or_credit_or_course_type_or_teaching_type_or_exam_type_or_teacher_name_cont]", params["q"] && params["q"]["name_or_credit_or_course_type_or_teaching_type_or_exam_type_or_teacher_name_cont"], class: " form-control search-form", placeholder: "可以对课程的名称，考试以及授课方式等进行检索" ,style:"width:800px" %>
+                            <%= text_field_tag "q[name_or_credit_or_course_type_or_teaching_type_or_exam_type_or_teacher_name_cont]",
+                                params["q"] && params["q"]["name_or_credit_or_course_type_or_teaching_type_or_exam_type_or_teacher_name_cont"],
+                                class: " form-control search-form", placeholder: "可以对课程的名称，考试以及授课方式等进行检索" ,style:"width:800px" %>
                           </td>
                           <td>
                             <%= submit_tag"搜索",class: "btn btn-success" ,style:"width:100px"%>
@@ -34,13 +36,7 @@
                     <% end %>
                     </tr>
                     <tr>
-                     <!-- <td colspan="12"  >
-                        <div class="panel-heading">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseASD">
-                            <span class="glyphicon glyphicon-align-justify" >课程筛选</span>
-                          </a>
-                        </div>
-                      </td>-->
+
                     </tr>
                       <td colspan="12">
                         <div id="collapseASD" class="accordion-body collapse">

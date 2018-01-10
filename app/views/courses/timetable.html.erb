@@ -50,10 +50,14 @@
                           <% if  @course_time_table[i][j][0]!=''  %>
                             <% if  @course_time_table[i][j][0].include? "_open"  %>
 
-                              <td class="warning", class='row<%= i+1 %> col<%=j+1%>'><a href="#" data-toggle="popover" data-rights='<%= @course_time_table[i][j][0].sub("_open", "") %>' data-weeks='<%= @course_time_table[i][j][1] %>' data-rooms='<%= @course_time_table[i][j][2] %>' rel="drevil"><%= @course_time_table[i][j][0].sub("_open", "") %></a><!--<span class="label label-info pull-right">旁听</span>--></td>
+                              <td class="warning", class='row<%= i+1 %> col<%=j+1%>'><a href="#" data-toggle="popover" data-rights='<%= @course_time_table[i][j][0].sub("_open", "") %>'
+                                  data-weeks='<%= @course_time_table[i][j][1] %>' data-rooms='<%= @course_time_table[i][j][2] %>'
+                                   rel="drevil"><%= @course_time_table[i][j][0].sub("_open", "") %></a></td>
 
                               <% else %>
-                              <td class="success", class='row<%= i+1 %> col<%=j+1%>'><a href="#" data-toggle="popover" data-rights='<%= @course_time_table[i][j][0] %>' data-weeks='<%= @course_time_table[i][j][1] %>' data-rooms='<%= @course_time_table[i][j][2] %>' rel="drevil"><%= @course_time_table[i][j][0] %></a>
+                              <td class="success", class='row<%= i+1 %> col<%=j+1%>'><a href="#" data-toggle="popover" data-rights='<%= @course_time_table[i][j][0] %>'
+                                  data-weeks='<%= @course_time_table[i][j][1] %>' data-rooms='<%= @course_time_table[i][j][2] %>'
+                                   rel="drevil"><%= @course_time_table[i][j][0] %></a>
                               </td>
                 <% end %>
                       <%else %>
